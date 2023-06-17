@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/*@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cabin+Sketch&display=swap');*/
+
 /*
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -48,14 +50,6 @@ body {
 
 .start-button:active {
   background-image: url('/images/start-red.png');
-}
-
-.current-word {
-  font-family: 'Cabin Sketch', cursive;
-}
-
-.score {
-  font-family: 'Audiowide', cursive;
 }
 
 .mobile-container {

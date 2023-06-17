@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react';
 
+import { audiowide, cabinsketch } from "../fonts"
+
 import colors from './colors'; 
 import pasta from './pasta'; 
 
@@ -66,18 +68,18 @@ const GamePage = () => {
       <div className="flex flex-col justify-between w-full sm:flex-row">
         <div className="relative">
           <img src="/images/current-score.png" alt="Current Score" className="w-[300px] object-contain mb-4 sm:mb-0 sm:mr-4" />
-          <p className="absolute bottom-8 sm:bottom-6 left-60 sm:right-14 text-4xl score">{currentScore}</p>
+          <p className={`absolute bottom-8 sm:bottom-6 left-60 sm:right-14 text-4xl ${audiowide.className}`}>{currentScore}</p>
         </div>
 
         <div className="relative">
-          <img src="/images/high-score.png" alt="High Score" className="w-[300px] object-contain " />
-          <p className="absolute bottom-7 left-60 sm:right-14 text-4xl score">{highScore}</p>
+          <img src="/images/high-score.png" alt="High Score" className="w-[300px] object-contain" />
+          <p className={`absolute bottom-7 left-60 sm:right-14 text-4xl score ${audiowide.className}`}>{highScore}</p>
         </div>
       </div>
 
       {/* word section */}
       <div className="flex flex-col items-center justify-center flex-grow flex grow">  
-        <h1 className="text-8xl current-word">{currentWord}</h1>
+        <h1 className={`text-8xl ${cabinsketch.className}`}>{currentWord}</h1>
       </div>
 
       {/* bottom selectors */}
