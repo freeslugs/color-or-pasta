@@ -8,7 +8,9 @@ import pasta from './pasta';
 
 const GamePage = () => {
   const [currentWord, setCurrentWord] = useState('');
+  const [isPasta, setIsPasta] = useState(false);
   const [currentScore, setCurrentScore] = useState(0);
+  const [answer, setAnswer] = useState(false);
 
   useEffect(() => {
     selectRandomWord();
@@ -24,6 +26,9 @@ const GamePage = () => {
   };
 
   const guess = (selection) => {
+    setAnswer(selection);
+    setIsPasta(pasta.includes(currentWord));
+
     if (
       (colors.includes(currentWord) && selection === 'color') ||
       (pasta.includes(currentWord) && selection === 'pasta')
@@ -46,7 +51,7 @@ const GamePage = () => {
 
         <div className="relative">
           <img src="/images/high-score.png" alt="High Score" className="w-[300px] object-contain " />
-          <p className="absolute bottom-7 left-60 sm:right-14 text-4xl score">{currentScore}</p>
+          <p className="absolute bottom-7 left-60 sm:right-14 text-4xl score">x</p>
         </div>
       </div>
 
@@ -58,11 +63,28 @@ const GamePage = () => {
       {/* bottom selectors */}
       <div className="flex justify-center">
         <button onClick={() => guess('pasta')}>
-          <img src="/images/pasta-brown.png" alt="Pasta Brown" className="w-[150px] object-contain sm:w-[300px]"  />
+          <div className="relative">
+            <img src="/images/pasta-brown.png" alt="Pasta Brown" className="w-[150px] object-contain sm:w-[300px]" />
+            {answer == 'pasta' && isPasta && (
+              <img src="/images/check.png" alt="Correct" className="w-[75px] object-contain sm:w-[150px] absolute top-0 left-12" />
+            )}  
+            {answer == 'pasta' && !isPasta && (
+              <img src="/images/x.png" alt="Correct" className="w-[75px] object-contain sm:w-[150px] absolute top-0 left-12" />
+            )}  
+
+          </div>
         </button>
         <img src="/images/or.png" alt="Or" className="w-[50px] object-contain sm:w-[100px]" />
         <button onClick={() => guess('color')}>
-          <img src="/images/color.png" alt="Color" className="w-[150px] object-contain sm:w-[300px]" />
+          <div className="relative">
+            <img src="/images/color.png" alt="Color" className="w-[150px] object-contain sm:w-[300px]" />
+            {answer == 'color' && !isPasta && (
+              <img src="/images/check.png" alt="Correct" className="w-[75px] object-contain sm:w-[150px] absolute top-2 sm:top-5 left-12" />
+            )}  
+            {answer == 'color' && isPasta && (
+              <img src="/images/x.png" alt="Correct" className="w-[75px] object-contain sm:w-[150px] absolute top-2 sm:top-5 left-8" />
+            )}  
+          </div>
         </button>
       </div>
     </div>
