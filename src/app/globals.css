@@ -57,3 +57,7 @@ body {
 .score {
   font-family: 'Audiowide', cursive;
 }
+
+.mobile-container {
+  height: calc(100vh - 100px);
+}
