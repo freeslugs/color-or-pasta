@@ -73,7 +73,7 @@ const GamePage = () => {
 
         <div className="relative">
           <img src="/images/high-score.png" alt="High Score" className="w-[300px] object-contain" />
-          <p className={`absolute bottom-7 left-60 sm:right-14 text-4xl score ${audiowide.className}`}>{highScore}</p>
+          <p className={`absolute bottom-7 left-56 text-4xl score ${audiowide.className}`}>{highScore}</p>
         </div>
       </div>
 
