@@ -42,14 +42,13 @@ const GamePage = () => {
         <div className="relative">
           <img src="/images/current-score.png" alt="Current Score" className="w-[300px] object-contain mb-4 sm:mb-0 sm:mr-4" />
           <p className="absolute top-0 right-0 font-bold text-xl p-4">{currentScore}</p>
-
         </div>
         <img src="/images/high-score.png" alt="High Score" className="w-[300px] object-contain" />
       </div>
 
       {/* word section */}
       <div className="flex flex-col items-center justify-center flex-grow flex grow">  
-        <h1 className="text-4xl font-bold current-word">{currentWord}</h1>
+        <h1 className="text-8xl current-word">{currentWord}</h1>
       </div>
 
       {/* bottom selectors */}
