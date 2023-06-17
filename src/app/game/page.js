@@ -63,7 +63,7 @@ const GamePage = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-between mobile-container" >
+    <div className="flex flex-col items-center justify-between mobile-container overflow-hidden" >
       {/* header */}
       <div className="flex flex-col justify-between w-full sm:flex-row">
         <div className="relative">
