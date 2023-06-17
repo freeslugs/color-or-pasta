@@ -11,10 +11,16 @@ const GamePage = () => {
   const [isPasta, setIsPasta] = useState(false);
   const [currentScore, setCurrentScore] = useState(0);
   const [answer, setAnswer] = useState(false);
+  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
     selectRandomWord();
+    retrieveHighScore();
   }, []);
+
+  useEffect(() => {
+    saveHighScore();
+  }, [currentScore]);
 
   const selectRandomWord = () => {
     const randomIndex = Math.floor(Math.random() * (colors.length + pasta.length));
@@ -40,6 +46,20 @@ const GamePage = () => {
     selectRandomWord();
   };
 
+  const retrieveHighScore = () => {
+    const savedHighScore = localStorage.getItem('highScore');
+    if (savedHighScore) {
+      setHighScore(parseInt(savedHighScore));
+    }
+  }
+
+  const saveHighScore = () => {
+    if (currentScore > highScore) {
+      setHighScore(currentScore);
+      localStorage.setItem('highScore', currentScore.toString());
+    }
+  }
+
   return (
     <div className="flex flex-col items-center justify-between min-h-screen" >
       {/* header */}
@@ -51,7 +71,7 @@ const GamePage = () => {
 
         <div className="relative">
           <img src="/images/high-score.png" alt="High Score" className="w-[300px] object-contain " />
-          <p className="absolute bottom-7 left-60 sm:right-14 text-4xl score">x</p>
+          <p className="absolute bottom-7 left-60 sm:right-14 text-4xl score">{highScore}</p>
         </div>
       </div>
 
