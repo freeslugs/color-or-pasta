@@ -49,3 +49,7 @@ body {
 .start-button:active {
   background-image: url('/images/start-red.png');
 }
+
+.current-word {
+  font-family: 'Cabin Sketch', cursive;
+}
