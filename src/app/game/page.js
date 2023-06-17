@@ -41,12 +41,12 @@ const GamePage = () => {
       <div className="flex flex-col justify-between w-full sm:flex-row">
         <div className="relative">
           <img src="/images/current-score.png" alt="Current Score" className="w-[300px] object-contain mb-4 sm:mb-0 sm:mr-4" />
-          <p className="absolute bottom-7 sm:bottom-5 left-60 sm:right-14 text-4xl score">{currentScore}</p>
+          <p className="absolute bottom-8 sm:bottom-6 left-60 sm:right-14 text-4xl score">{currentScore}</p>
         </div>
 
         <div className="relative">
           <img src="/images/high-score.png" alt="High Score" className="w-[300px] object-contain " />
-          <p className="absolute bottom-6 sm:bottom-6 left-60 sm:right-14 text-4xl score">{currentScore}</p>
+          <p className="absolute bottom-7 left-60 sm:right-14 text-4xl score">{currentScore}</p>
         </div>
       </div>
 
