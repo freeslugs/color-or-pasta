@@ -27,3 +27,25 @@ body {
     rgb(var(--background-start-rgb));
 }
 */
+
+.start-button {
+  display: inline-block;
+  padding: 0;
+  border: none;
+  background: url('/images/start-grey.png') no-repeat;
+  background-size: cover; /* Add this line */
+
+  width: 200px;
+  height: 120px;
+  cursor: pointer;
+/*  transition: background-image 0.3s ease-in-out;*/
+  margin-top: 50px;
+}
+
+.start-button:hover {
+  background-image: url('/images/start-red.png');
+}
+
+.start-button:active {
+  background-image: url('/images/start-red.png');
+}
